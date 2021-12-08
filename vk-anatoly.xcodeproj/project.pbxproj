@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		123CA3A8275BCF5200E647C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA3A7275BCF5200E647C1 /* AppDelegate.swift */; };
 		123CA3AA275BCF5200E647C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA3A9275BCF5200E647C1 /* SceneDelegate.swift */; };
-		123CA3AC275BCF5200E647C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA3AB275BCF5200E647C1 /* ViewController.swift */; };
 		123CA3AF275BCF5200E647C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123CA3AD275BCF5200E647C1 /* Main.storyboard */; };
 		123CA3B1275BCF5300E647C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 123CA3B0275BCF5300E647C1 /* Assets.xcassets */; };
 		123CA3B4275BCF5300E647C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123CA3B2275BCF5300E647C1 /* LaunchScreen.storyboard */; };
 		123CA3C0275BD09000E647C1 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA3BF275BD09000E647C1 /* FriendsViewController.swift */; };
 		123CA4432761246900E647C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA4422761246900E647C1 /* AuthViewController.swift */; };
 		123CA44627612B2300E647C1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA44527612B2300E647C1 /* Session.swift */; };
+		123CA44827612F8000E647C1 /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA44727612F8000E647C1 /* FriendsAPI.swift */; };
+		123CA44B2761330200E647C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 123CA44A2761330200E647C1 /* Alamofire */; };
+		123CA44E2761358F00E647C1 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA44D2761358F00E647C1 /* Data+PrettyJSON.swift */; };
+		123CA4512761364400E647C1 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA4502761364400E647C1 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		123CA3A4275BCF5200E647C1 /* vk-anatoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vk-anatoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123CA3A7275BCF5200E647C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		123CA3A9275BCF5200E647C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		123CA3AB275BCF5200E647C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		123CA3AE275BCF5200E647C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		123CA3B0275BCF5300E647C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		123CA3B3275BCF5300E647C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,9 @@
 		123CA3BF275BD09000E647C1 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		123CA4422761246900E647C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		123CA44527612B2300E647C1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		123CA44727612F8000E647C1 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
+		123CA44D2761358F00E647C1 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
+		123CA4502761364400E647C1 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123CA44B2761330200E647C1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,7 @@
 				123CA3BB275BCFB300E647C1 /* App */,
 				123CA3BC275BCFC000E647C1 /* Modules */,
 				123CA44427612AFF00E647C1 /* Services */,
+				123CA44C2761356A00E647C1 /* Extension */,
 				123CA3BD275BD01900E647C1 /* Resources */,
 			);
 			path = "vk-anatoly";
@@ -102,8 +109,8 @@
 		123CA3BE275BD07300E647C1 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				123CA3AB275BCF5200E647C1 /* ViewController.swift */,
 				123CA3BF275BD09000E647C1 /* FriendsViewController.swift */,
+				123CA44F2761363400E647C1 /* Models */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -120,8 +127,25 @@
 			isa = PBXGroup;
 			children = (
 				123CA44527612B2300E647C1 /* Session.swift */,
+				123CA44727612F8000E647C1 /* FriendsAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		123CA44C2761356A00E647C1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				123CA44D2761358F00E647C1 /* Data+PrettyJSON.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		123CA44F2761363400E647C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				123CA4502761364400E647C1 /* Friend.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +164,9 @@
 			dependencies = (
 			);
 			name = "vk-anatoly";
+			packageProductDependencies = (
+				123CA44A2761330200E647C1 /* Alamofire */,
+			);
 			productName = "vk-anatoly";
 			productReference = 123CA3A4275BCF5200E647C1 /* vk-anatoly.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 123CA39B275BCF5200E647C1;
+			packageReferences = (
+				123CA4492761330200E647C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 123CA3A5275BCF5200E647C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,11 +226,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				123CA3C0275BD09000E647C1 /* FriendsViewController.swift in Sources */,
-				123CA3AC275BCF5200E647C1 /* ViewController.swift in Sources */,
+				123CA44827612F8000E647C1 /* FriendsAPI.swift in Sources */,
 				123CA44627612B2300E647C1 /* Session.swift in Sources */,
+				123CA44E2761358F00E647C1 /* Data+PrettyJSON.swift in Sources */,
 				123CA4432761246900E647C1 /* AuthViewController.swift in Sources */,
 				123CA3A8275BCF5200E647C1 /* AppDelegate.swift in Sources */,
 				123CA3AA275BCF5200E647C1 /* SceneDelegate.swift in Sources */,
+				123CA4512761364400E647C1 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +452,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		123CA4492761330200E647C1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		123CA44A2761330200E647C1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 123CA4492761330200E647C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 123CA39C275BCF5200E647C1 /* Project object */;
 }
