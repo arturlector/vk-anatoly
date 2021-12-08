@@ -6,15 +6,26 @@
 //
 
 import UIKit
+//Простой код
+//SDWebImage
+//KingsFire
+//Правильный код ()
 
-class FriendsViewController: UITableViewController {
+final class FriendsViewController: UITableViewController {
     
-    let friends = ["Jack", "Brad", "Lucky"]
+    private var friends: [Friend] = []
+    
+    private let friendsAPI = FriendsAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        friendsAPI.getFriends { friends in
+            self.friends = friends
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source
@@ -28,7 +39,9 @@ class FriendsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = friends[indexPath.row]
+        let friend: Friend = friends[indexPath.row]
+        
+        cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         
         return cell
     }
