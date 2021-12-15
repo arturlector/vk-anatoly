@@ -6,14 +6,10 @@
 //
 
 import UIKit
-//Простой код
-//SDWebImage
-//KingsFire
-//Правильный код ()
 
 final class FriendsViewController: UITableViewController {
     
-    private var friends: [Friend] = []
+    private var friends: [FriendDTO] = []
     
     private let friendsAPI = FriendsAPI()
     
@@ -35,11 +31,10 @@ final class FriendsViewController: UITableViewController {
         return friends.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let friend: Friend = friends[indexPath.row]
+        let friend: FriendDTO = friends[indexPath.row]
         
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         
