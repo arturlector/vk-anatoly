@@ -7,28 +7,13 @@
 
 import Foundation
 
-
-
-import Foundation
-
-// MARK: - FriendsJSON
-struct FriendsJSON: Codable {
-    let response: FriendsResponse
-}
-
-// MARK: - Response
-struct FriendsResponse: Codable {
-    let count: Int
-    let items: [Friend]
-}
-
-// MARK: - Friend
-struct Friend: Codable {
-    let canAccessClosed: Bool
+// MARK: - Friend (DTO) - Data Transfer Object, DAO - объектс связанный с Базой данных
+struct FriendDTO: Codable {
+    let canAccessClosed: Bool?
     let id: Int
     let photo100: String
     let lastName, trackCode: String
-    let isClosed: Bool
+    let isClosed: Bool?
     let firstName: String
 
     enum CodingKeys: String, CodingKey {

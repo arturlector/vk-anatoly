@@ -7,13 +7,14 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 final class FriendsAPI {
     
     let baseUrl = "https://api.vk.com/method"
     
     
-    func getFriends(completion: @escaping([Friend])->()) {
+    func getFriends(completion: @escaping([FriendDTO])->()) {
         
         //    //https://api.vk.com/method/METHOD?PARAMS&access_token=TOKEN&v=V
         //
@@ -31,7 +32,7 @@ final class FriendsAPI {
         let params: [String: String] = [
             "userId": Session.shared.userId,
             "order": "name",
-            "count": "5",
+            "count": "100",
             "fields": "photo_100",
             "access_token": Session.shared.token,
             "v": "5.131"
@@ -45,19 +46,21 @@ final class FriendsAPI {
         AF.request(url, method: .get, parameters: params).responseJSON { response in
             
             guard let data = response.data else { return }
-            
-            //print(response.result)
-            
+
             print(data.prettyJSON)
             
-            let friendsJSON = try? JSONDecoder().decode(FriendsJSON.self, from: data)
-            
-            guard let friends = friendsJSON?.response.items else { return }
-            
-            completion(friends)
-            
+            do {
+                
+                let friendsData = try JSON(data)["response"]["items"].rawData()
+                
+                let friends = try JSONDecoder().decode([FriendDTO].self, from: friendsData)
+                
+                completion(friends)
+                
+            } catch {
+                print(error)
+            }
         }
-        
     }
 
 

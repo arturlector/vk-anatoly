@@ -19,6 +19,11 @@
 		123CA44B2761330200E647C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 123CA44A2761330200E647C1 /* Alamofire */; };
 		123CA44E2761358F00E647C1 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA44D2761358F00E647C1 /* Data+PrettyJSON.swift */; };
 		123CA4512761364400E647C1 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123CA4502761364400E647C1 /* Friend.swift */; };
+		12C83B99276A5E120093EC66 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 12C83B98276A5E120093EC66 /* SwiftyJSON */; };
+		12C83B9C276A63090093EC66 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C83B9B276A63080093EC66 /* PhotoAPI.swift */; };
+		12C83B9F276A63330093EC66 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C83B9E276A63330093EC66 /* PhotoDTO.swift */; };
+		12C83BA1276A634A0093EC66 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C83BA0276A634A0093EC66 /* PhotoAlbumViewController.swift */; };
+		12C83BA3276A63BC0093EC66 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C83BA2276A63BC0093EC66 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,10 @@
 		123CA44727612F8000E647C1 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
 		123CA44D2761358F00E647C1 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		123CA4502761364400E647C1 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		12C83B9B276A63080093EC66 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
+		12C83B9E276A63330093EC66 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		12C83BA0276A634A0093EC66 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		12C83BA2276A63BC0093EC66 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C83B99276A5E120093EC66 /* SwiftyJSON in Frameworks */,
 				123CA44B2761330200E647C1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +99,7 @@
 		123CA3BC275BCFC000E647C1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				12C83B9D276A63200093EC66 /* Photo Album */,
 				123CA4412761245000E647C1 /* Auth */,
 				123CA3BE275BD07300E647C1 /* Friends */,
 			);
@@ -127,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				123CA44527612B2300E647C1 /* Session.swift */,
-				123CA44727612F8000E647C1 /* FriendsAPI.swift */,
+				12C83B9A276A62F10093EC66 /* API */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -148,6 +159,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		12C83B9A276A62F10093EC66 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				123CA44727612F8000E647C1 /* FriendsAPI.swift */,
+				12C83B9B276A63080093EC66 /* PhotoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		12C83B9D276A63200093EC66 /* Photo Album */ = {
+			isa = PBXGroup;
+			children = (
+				12C83B9E276A63330093EC66 /* PhotoDTO.swift */,
+				12C83BA0276A634A0093EC66 /* PhotoAlbumViewController.swift */,
+				12C83BA2276A63BC0093EC66 /* PhotoCell.swift */,
+			);
+			path = "Photo Album";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +196,7 @@
 			name = "vk-anatoly";
 			packageProductDependencies = (
 				123CA44A2761330200E647C1 /* Alamofire */,
+				12C83B98276A5E120093EC66 /* SwiftyJSON */,
 			);
 			productName = "vk-anatoly";
 			productReference = 123CA3A4275BCF5200E647C1 /* vk-anatoly.app */;
@@ -197,6 +228,7 @@
 			mainGroup = 123CA39B275BCF5200E647C1;
 			packageReferences = (
 				123CA4492761330200E647C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				12C83B97276A5E110093EC66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 123CA3A5275BCF5200E647C1 /* Products */;
 			projectDirPath = "";
@@ -225,11 +257,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C83BA1276A634A0093EC66 /* PhotoAlbumViewController.swift in Sources */,
+				12C83B9F276A63330093EC66 /* PhotoDTO.swift in Sources */,
 				123CA3C0275BD09000E647C1 /* FriendsViewController.swift in Sources */,
 				123CA44827612F8000E647C1 /* FriendsAPI.swift in Sources */,
+				12C83BA3276A63BC0093EC66 /* PhotoCell.swift in Sources */,
 				123CA44627612B2300E647C1 /* Session.swift in Sources */,
 				123CA44E2761358F00E647C1 /* Data+PrettyJSON.swift in Sources */,
 				123CA4432761246900E647C1 /* AuthViewController.swift in Sources */,
+				12C83B9C276A63090093EC66 /* PhotoAPI.swift in Sources */,
 				123CA3A8275BCF5200E647C1 /* AppDelegate.swift in Sources */,
 				123CA3AA275BCF5200E647C1 /* SceneDelegate.swift in Sources */,
 				123CA4512761364400E647C1 /* Friend.swift in Sources */,
@@ -462,6 +498,14 @@
 				minimumVersion = 5.4.4;
 			};
 		};
+		12C83B97276A5E110093EC66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -469,6 +513,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 123CA4492761330200E647C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		12C83B98276A5E120093EC66 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12C83B97276A5E110093EC66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

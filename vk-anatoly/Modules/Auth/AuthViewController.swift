@@ -91,8 +91,10 @@ final class AuthViewController: UIViewController, WKNavigationDelegate {
         Session.shared.token = token
         Session.shared.userId = userId
         
-        let friendsVC = FriendsViewController()
-        navigationController?.pushViewController(friendsVC, animated: true)
+//        let friendsVC = FriendsViewController()
+//        navigationController?.pushViewController(friendsVC, animated: true)
+        
+        performSegue(withIdentifier: "showTabBarSegue", sender: nil)
         
         decisionHandler(.cancel)
         
