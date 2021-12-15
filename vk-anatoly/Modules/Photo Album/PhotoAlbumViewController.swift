@@ -17,7 +17,7 @@ class PhotoAlbumViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView!.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        //self.collectionView!.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
         
         photoAPI.getPhotos { photos in
             self.photos = photos
@@ -32,6 +32,8 @@ class PhotoAlbumViewController: UICollectionViewController {
         
         return photos.count
     }
+    
+    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -40,34 +42,13 @@ class PhotoAlbumViewController: UICollectionViewController {
         let photo = photos[indexPath.row]
         
         if let photoUrl = URL(string: photo.smallImage) {
-            
-            print(photoUrl)
-            cell.imageView.load(url: photoUrl)
+            if let data = try? Data(contentsOf: photoUrl) {
+                if let image = UIImage(data: data) {
+                    cell.photoImageView.image = image
+                }
+            }
         }
     
         return cell
     }
-
-}
-
-extension UIImageView {
-    
-    func load(url: URL) {
-        
-        do {
-            let data = try Data(contentsOf: url)
-                
-            let image = UIImage(data: data)
-                    
-            self.image = image
-                    
-                
-            
-        }
-        catch {
-            print(error)
-        }
-    }
-            
-    
 }
